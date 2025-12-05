@@ -1,0 +1,58 @@
+{
+  "name": "smsapp",
+  "version": "1.0.0",
+  "description": "An Ionic/Nuxt/Capacitor app with elegant modern dark design to control a device over SMS",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "cap:init": "cap init 'SMS App' ir.smsapp.securitysystem --web-dir dist",
+    "cap:sync": "cap sync",
+    "cap:android": "cap open android",
+    "cap:add:android": "cap add android",
+    "cap:build:android": "npm run generate && cap sync android",
+    "android:build": "npm run generate && cap sync android && cd android && ./gradlew assembleDebug",
+    "android:build:release": "npm run generate && cap sync android && cd android && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/app": "^6.0.2",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/haptics": "^6.0.2",
+    "@capacitor/keyboard": "^6.0.3",
+    "@capacitor/splash-screen": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.2",
+    "@nuxt/ui": "^2.21.0",
+    "@nuxtjs/i18n": "^10.2.1",
+    "@pinia/nuxt": "^0.5.5",
+    "@vueuse/core": "^11.3.0",
+    "@vueuse/nuxt": "^11.3.0",
+    "ionicons": "^7.4.0",
+    "nuxt": "^3.14.1592",
+    "nuxt-swiper": "^1.2.2",
+    "pinia": "^2.2.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "@nuxt/eslint": "^0.7.4",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@types/node": "^22.10.2",
+    "@vite-pwa/nuxt": "^0.10.6",
+    "eslint": "^9.16.0",
+    "sass": "^1.82.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "app": {
+    "title": "Security System",
+    "subtitle": "SMS Device Control"
+  },
+  "nav": {
+    "home": "Home",
+    "zones": "Zones",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "done": "Done",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "menu": "Menu",
+    "exit": "Exit",
+    "loading": "Loading..."
+  },
+  "home": {
+    "activation": "Activation",
+    "getInfo": "Get Information",
+    "selectZones": "Select Zones",
+    "quickActions": "Quick Actions",
+    "testAlarm": "Test Alarm",
+    "checkStatus": "Check Status",
+    "sendSms": "Send SMS",
+    "deviceSettings": "Device Settings",
+    "deviceStatus": "Device Status",
+    "statusActive": "System is active ✅",
+    "statusInactive": "System is inactive"
+  },
+  "zones": {
+    "title": "Zone Management",
+    "zone1": "Zone 1",
+    "zone2": "Zone 2",
+    "zone3": "Zone 3",
+    "zone4": "Zone 4",
+    "zone5": "Zone 5",
+    "doorSensor": "Door Sensor",
+    "windowSensor": "Window Sensor",
+    "motionSensor": "Motion Sensor",
+    "glassSensor": "Glass Break Sensor",
+    "smokeSensor": "Smoke Sensor",
+    "info": "When a zone is activated, an alert SMS will be sent if the corresponding sensor is triggered."
+  },
+  "history": {
+    "title": "Event History",
+    "empty": "No history available",
+    "zone": "Zone",
+    "systemActivated": "System Activated",
+    "systemDeactivated": "System Deactivated",
+    "zoneTriggered": "Zone Alert",
+    "smsSent": "SMS Sent",
+    "types": {
+      "alarm": "Alarm",
+      "status": "Status",
+      "command": "Command"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "darkModeTitle": "Dark Mode",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language",
+    "device": "Device",
+    "deviceAddress": "Device Address",
+    "deviceAddressTitle": "Set Device Address",
+    "deviceAddressPlaceholder": "Phone number or device address",
+    "changeDeviceAddress": "Change Device Address",
+    "notSet": "Not set",
+    "data": "Data",
+    "clearHistory": "Clear History",
+    "about": "About",
+    "version": "Version",
+    "copyright": "© 2024 - All rights reserved"
+  },
+  "errors": {
+    "emptyDeviceAddress": "Device address cannot be empty"
+  },
+  "success": {
+    "addressSaved": "Address saved successfully ✅",
+    "languageChanged": "Language changed",
+    "historyCleared": "History cleared"
+  }
+}

@@ -1,0 +1,791 @@
+// ============================================
+// SMS App - Main SCSS Stylesheet
+// Modern, elegant dark design with RTL/LTR support
+// ============================================
+
+// ============================================
+// VARIABLES
+// ============================================
+
+// Color Palette - Dark Theme
+$color-bg-primary: #0f0f1a;
+$color-bg-secondary: #1a1a2e;
+$color-bg-tertiary: #252542;
+$color-bg-card: #16213e;
+
+// Color Palette - Light Theme
+$color-bg-primary-light: #f8fafc;
+$color-bg-secondary-light: #ffffff;
+$color-bg-tertiary-light: #f1f5f9;
+$color-bg-card-light: #ffffff;
+
+// Primary Colors - Deep Purple/Indigo gradient
+$color-primary: #6366f1;
+$color-primary-light: #818cf8;
+$color-primary-dark: #4f46e5;
+
+// Secondary Colors - Teal accent
+$color-secondary: #14b8a6;
+$color-secondary-light: #2dd4bf;
+$color-secondary-dark: #0d9488;
+
+// Accent Color (from Android design)
+$color-accent: #8b98ce;
+
+// Text Colors - Dark Mode
+$color-text-primary: #f8fafc;
+$color-text-secondary: #94a3b8;
+$color-text-muted: #64748b;
+
+// Text Colors - Light Mode
+$color-text-primary-light: #1e293b;
+$color-text-secondary-light: #475569;
+$color-text-muted-light: #94a3b8;
+
+// Status Colors
+$color-success: #22c55e;
+$color-warning: #f59e0b;
+$color-error: #ef4444;
+$color-info: #3b82f6;
+
+// Border Colors
+$color-border-dark: rgba(99, 102, 241, 0.15);
+$color-border-light: rgba(148, 163, 184, 0.2);
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+$shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+$shadow-glow-success: 0 0 15px rgba(34, 197, 94, 0.4);
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+
+// Border Radius
+$radius-sm: 0.375rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-xl: 1rem;
+$radius-2xl: 1.5rem;
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-normal: 250ms ease;
+$transition-slow: 350ms ease;
+
+// Font Families
+$font-persian: 'Vazirmatn', 'Tahoma', system-ui, sans-serif;
+$font-english: 'Inter', system-ui, -apple-system, sans-serif;
+
+// ============================================
+// MIXINS
+// ============================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin glass-effect {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid $color-border-dark;
+}
+
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+}
+
+@mixin gradient-dark {
+  background: linear-gradient(180deg, $color-bg-secondary 0%, $color-bg-primary 100%);
+}
+
+@mixin text-gradient {
+  background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin card-hover {
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg, $shadow-glow;
+  }
+}
+
+@mixin safe-area-inset($property, $direction) {
+  #{$property}: env(safe-area-inset-#{$direction});
+}
+
+// ============================================
+// CSS CUSTOM PROPERTIES (for dynamic theming)
+// ============================================
+
+:root {
+  // Colors
+  --color-bg-primary: #{$color-bg-primary};
+  --color-bg-secondary: #{$color-bg-secondary};
+  --color-bg-tertiary: #{$color-bg-tertiary};
+  --color-bg-card: #{$color-bg-card};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-muted: #{$color-text-muted};
+  --color-border: #{$color-border-dark};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+  
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #{$color-primary} 0%, #{$color-secondary} 100%);
+  --gradient-dark: linear-gradient(180deg, #{$color-bg-secondary} 0%, #{$color-bg-primary} 100%);
+  --gradient-card: linear-gradient(145deg, rgba(99, 102, 241, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+  
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-glow: #{$shadow-glow};
+}
+
+// ============================================
+// BASE STYLES
+// ============================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-persian;
+  background: var(--gradient-dark);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// ============================================
+// RTL/LTR SUPPORT
+// ============================================
+
+[dir="rtl"] {
+  font-family: $font-persian;
+  
+  .menu {
+    a {
+      flex-direction: column;
+    }
+  }
+}
+
+[dir="ltr"] {
+  font-family: $font-english;
+}
+
+// ============================================
+// HEADER STYLES
+// ============================================
+
+.app-header {
+  height: 56px;
+  background: rgba($color-bg-secondary, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--color-border);
+  @include flex-between;
+  padding: 0 $spacing-md;
+  @include safe-area-inset(padding-top, top);
+
+  &__title {
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: $color-primary;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+}
+
+// ============================================
+// NAVIGATION MENU
+// ============================================
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  background: rgba($color-bg-secondary, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  @include flex-between;
+  padding: 0 $spacing-xl;
+  border-top: 1px solid var(--color-border);
+  z-index: 40;
+  @include safe-area-inset(padding-bottom, bottom);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xs;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: $spacing-sm;
+    border-radius: $radius-lg;
+    transition: all $transition-normal;
+    min-width: 64px;
+
+    .icon {
+      font-size: 1.5rem;
+      transition: transform $transition-fast;
+    }
+
+    span {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: var(--color-text-secondary);
+      background: rgba($color-primary, 0.1);
+    }
+
+    &.router-link-active {
+      color: $color-primary;
+      
+      .icon {
+        transform: scale(1.1);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -$spacing-xs;
+        width: 4px;
+        height: 4px;
+        background: $color-primary;
+        border-radius: $radius-full;
+      }
+    }
+  }
+}
+
+// ============================================
+// CARD STYLES
+// ============================================
+
+.card {
+  background: var(--color-bg-card);
+  border-radius: $radius-xl;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: $spacing-lg;
+  @include card-hover;
+
+  &--glass {
+    @include glass-effect;
+  }
+
+  &--gradient {
+    background: var(--gradient-card);
+  }
+}
+
+// ============================================
+// ACTIVATION TOGGLE
+// ============================================
+
+.activation-card {
+  border: 2px solid $color-primary;
+  border-radius: $radius-xl;
+  padding: $spacing-lg $spacing-xl;
+  @include flex-between;
+  transition: all $transition-normal;
+  background: var(--color-bg-card);
+
+  &__label {
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  &--active {
+    border-color: $color-success;
+    color: $color-success;
+    box-shadow: $shadow-glow-success;
+
+    .activation-card__label {
+      color: $color-success;
+    }
+  }
+}
+
+// ============================================
+// ZONE OPTIONS (SWIPER)
+// ============================================
+
+.zone-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: all $transition-normal;
+  min-width: 80px;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $color-primary;
+    transition: color $transition-fast;
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background: rgba($color-primary, 0.1);
+    border-color: rgba($color-primary, 0.3);
+  }
+
+  &--active {
+    background: $color-primary;
+    border-color: $color-primary;
+    color: white;
+
+    .zone-option__icon {
+      color: white;
+    }
+  }
+}
+
+// Swiper customization
+.swiper-slide {
+  width: auto !important;
+}
+
+// ============================================
+// BUTTONS
+// ============================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: $radius-md;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  text-decoration: none;
+
+  &--primary {
+    @include gradient-primary;
+    color: white;
+    box-shadow: var(--shadow-md);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+  }
+
+  &--secondary {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+  }
+}
+
+// ============================================
+// FORM ELEMENTS
+// ============================================
+
+.input {
+  width: 100%;
+  padding: $spacing-md;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-md;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+  }
+
+  &[dir="ltr"] {
+    text-align: left;
+    direction: ltr;
+  }
+}
+
+// ============================================
+// MODAL STYLES
+// ============================================
+
+.modal {
+  &__header {
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__body {
+    padding: $spacing-lg 0;
+  }
+
+  &__footer {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: flex-end;
+    padding-top: $spacing-md;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+// ============================================
+// STATUS INDICATORS
+// ============================================
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: $radius-full;
+  display: inline-block;
+  position: relative;
+
+  &--online {
+    background: $color-success;
+    box-shadow: 0 0 10px $color-success;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: $radius-full;
+      background: $color-success;
+      animation: pulse-ring 1.5s ease-out infinite;
+      opacity: 0;
+    }
+  }
+
+  &--offline {
+    background: $color-error;
+    box-shadow: 0 0 10px $color-error;
+  }
+
+  &--pending {
+    background: $color-warning;
+    box-shadow: 0 0 10px $color-warning;
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-in {
+  animation: fade-in $transition-normal ease-out;
+}
+
+.slide-up {
+  animation: slide-up $transition-slow ease-out;
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+.text-gradient {
+  @include text-gradient;
+}
+
+.glass-card {
+  @include glass-effect;
+  border-radius: $radius-xl;
+}
+
+.glow-effect {
+  box-shadow: var(--shadow-glow);
+}
+
+.emoji {
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0 $spacing-xs;
+}
+
+// Loading spinner
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-bg-tertiary);
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+// Safe areas
+.safe-area-top {
+  @include safe-area-inset(padding-top, top);
+}
+
+.safe-area-bottom {
+  @include safe-area-inset(padding-bottom, bottom);
+}
+
+// ============================================
+// LIGHT MODE OVERRIDES
+// ============================================
+
+.light {
+  --color-bg-primary: #{$color-bg-primary-light};
+  --color-bg-secondary: #{$color-bg-secondary-light};
+  --color-bg-tertiary: #{$color-bg-tertiary-light};
+  --color-bg-card: #{$color-bg-card-light};
+  --color-text-primary: #{$color-text-primary-light};
+  --color-text-secondary: #{$color-text-secondary-light};
+  --color-text-muted: #{$color-text-muted-light};
+  --color-border: #{$color-border-light};
+  --gradient-dark: linear-gradient(180deg, #{$color-bg-secondary-light} 0%, #{$color-bg-primary-light} 100%);
+
+  body {
+    background: var(--gradient-dark);
+  }
+
+  .app-header {
+    background: rgba($color-bg-secondary-light, 0.9);
+  }
+
+  .menu {
+    background: rgba($color-bg-secondary-light, 0.95);
+  }
+}
+
+// ============================================
+// SCROLLBAR STYLING
+// ============================================
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-tertiary);
+  border-radius: $radius-full;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $color-primary-light;
+  }
+}
+
+// ============================================
+// SELECTION STYLING
+// ============================================
+
+::selection {
+  background: $color-primary;
+  color: white;
+}
+
+// ============================================
+// VUE TRANSITIONS
+// ============================================
+
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $transition-normal ease;
+}
+
+.fade-enter-active {
+  transition-delay: 0.15s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all $transition-normal ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all $transition-fast ease-in;
+}
+
+.slide-fade-enter-from {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+// ============================================
+// PAGE LAYOUT
+// ============================================
+
+.page-content {
+  padding: $spacing-md;
+  padding-bottom: calc(#{$spacing-xl} + 80px); // Account for bottom nav
+  min-height: 100vh;
+}
+
+// ============================================
+// NUXT UI OVERRIDES
+// ============================================
+
+// Dark mode card styling
+.dark {
+  .u-card {
+    background: var(--color-bg-card);
+    border-color: var(--color-border);
+  }
+}
