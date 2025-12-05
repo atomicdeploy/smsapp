@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Thin (Hairline) -->
+    <font
+        android:font="@font/yekanbakh_thin"
+        android:fontStyle="italic"
+        android:fontWeight="100" />
+
+    <!-- Extra Light (Ultra Light) -->
+    <font
+        android:font="@font/yekanbakh_light"
+        android:fontStyle="normal"
+        android:fontWeight="200" />
+
+    <!-- Light -->
+    <font
+        android:font="@font/yekanbakh_regular"
+        android:fontStyle="normal"
+        android:fontWeight="300" />
+
+    <!-- Regular -->
+    <font
+        android:font="@font/yekanbakh_regular"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+    <!-- Medium -->
+    <font
+        android:font="@font/yekanbakh_regular"
+        android:fontStyle="normal"
+        android:fontWeight="500" />
+
+    <!-- Semi Bold (Demi Bold) -->
+    <font
+        android:font="@font/yekanbakh_semibold"
+        android:fontStyle="normal"
+        android:fontWeight="600" />
+
+    <!-- Bold -->
+    <font
+        android:font="@font/yekanbakh_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+
+    <!-- Extra Bold (Ultra Bold) -->
+    <font
+        android:font="@font/yekanbakh_extrabold"
+        android:fontStyle="normal"
+        android:fontWeight="800" />
+
+    <!-- Black (Heavy) -->
+    <font
+        android:font="@font/yekanbakh_black"
+        android:fontStyle="normal"
+        android:fontWeight="900" />
+
+    <!-- Extra Black (Ultra Black) -->
+    <font
+        android:font="@font/yekanbakh_extrablack"
+        android:fontStyle="normal"
+        android:fontWeight="950" />
+
+</font-family>

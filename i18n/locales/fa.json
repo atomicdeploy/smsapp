@@ -1,0 +1,94 @@
+{
+  "app": {
+    "title": "سامانه ضد سرقت",
+    "subtitle": "کنترل پیامکی دستگاه"
+  },
+  "nav": {
+    "home": "خانه",
+    "zones": "زون‌ها",
+    "history": "تاریخچه",
+    "settings": "تنظیمات"
+  },
+  "common": {
+    "confirm": "تأیید",
+    "cancel": "انصراف",
+    "close": "بستن",
+    "yes": "بلی",
+    "no": "خیر",
+    "done": "انجام شد",
+    "save": "ذخیره",
+    "delete": "حذف",
+    "edit": "ویرایش",
+    "menu": "منو",
+    "exit": "خروج",
+    "loading": "در حال بارگذاری..."
+  },
+  "home": {
+    "activation": "فعالسازی",
+    "getInfo": "دریافت اطلاعات",
+    "selectZones": "انتخاب زون‌ها",
+    "quickActions": "دسترسی سریع",
+    "testAlarm": "تست آژیر",
+    "checkStatus": "بررسی وضعیت",
+    "sendSms": "ارسال پیامک",
+    "deviceSettings": "تنظیمات دستگاه",
+    "deviceStatus": "وضعیت دستگاه",
+    "statusActive": "سیستم فعال است ✅",
+    "statusInactive": "سیستم غیرفعال است"
+  },
+  "zones": {
+    "title": "مدیریت زون‌ها",
+    "zone1": "زون ۱",
+    "zone2": "زون ۲",
+    "zone3": "زون ۳",
+    "zone4": "زون ۴",
+    "zone5": "زون ۵",
+    "doorSensor": "سنسور درب ورودی",
+    "windowSensor": "سنسور پنجره",
+    "motionSensor": "سنسور حرکتی",
+    "glassSensor": "سنسور شکست شیشه",
+    "smokeSensor": "سنسور دود",
+    "info": "با فعال کردن هر زون، در صورت تحریک سنسور مربوطه، پیامک هشدار ارسال می‌شود."
+  },
+  "history": {
+    "title": "تاریخچه رویدادها",
+    "empty": "تاریخچه‌ای وجود ندارد",
+    "zone": "زون",
+    "systemActivated": "سیستم فعال شد",
+    "systemDeactivated": "سیستم غیرفعال شد",
+    "zoneTriggered": "هشدار زون",
+    "smsSent": "پیامک ارسال شد",
+    "types": {
+      "alarm": "هشدار",
+      "status": "وضعیت",
+      "command": "فرمان"
+    }
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "appearance": "ظاهر",
+    "darkModeTitle": "حالت تاریک",
+    "darkMode": "حالت تیره",
+    "lightMode": "حالت روشن",
+    "language": "زبان",
+    "device": "دستگاه",
+    "deviceAddress": "آدرس دستگاه",
+    "deviceAddressTitle": "تنظیم آدرس دستگاه",
+    "deviceAddressPlaceholder": "شماره تلفن یا آدرس دستگاه",
+    "changeDeviceAddress": "تغییر آدرس دستگاه",
+    "notSet": "تنظیم نشده",
+    "data": "داده‌ها",
+    "clearHistory": "پاک کردن تاریخچه",
+    "about": "درباره برنامه",
+    "version": "نسخه",
+    "copyright": "© ۱۴۰۳ - تمامی حقوق محفوظ است"
+  },
+  "errors": {
+    "emptyDeviceAddress": "آدرس دستگاه نمی‌تواند خالی باشد"
+  },
+  "success": {
+    "addressSaved": "آدرس با موفقیت ذخیره شد ✅",
+    "languageChanged": "زبان تغییر کرد",
+    "historyCleared": "تاریخچه پاک شد"
+  }
+}

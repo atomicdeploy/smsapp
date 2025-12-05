@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">سامانه ضد سرقت</string>
+    <string name="title_activity_main">سامانه ضد سرقت</string>
+
+    <!-- Common strings -->
+    <string name="done">انجام شد</string>
+    <string name="cancel">لغو</string>
+    <string name="confirm">تأیید</string>
+    <string name="close">بستن</string>
+    <string name="yes">بلی</string>
+    <string name="no">خیر</string>
+
+    <!-- App strings -->
+    <string name="str_welcome">خوش آمدید</string>
+    <string name="str_title_exit_app">خروج از برنامه</string>
+    <string name="str_question_exit_app">آیا می‌خواهید از برنامه خارج شوید؟</string>
+</resources>

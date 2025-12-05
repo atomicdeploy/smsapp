@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night mode colors (same as light since app is dark-first) -->
+    <color name="transparent">#00000000</color>
+    
+    <!-- Primary colors -->
+    <color name="colorPrimary">#6366f1</color>
+    <color name="colorPrimaryLight">#818cf8</color>
+    <color name="colorPrimaryDark">#4f46e5</color>
+    
+    <!-- Secondary colors -->
+    <color name="colorSecondary">#14b8a6</color>
+    <color name="colorSecondaryLight">#2dd4bf</color>
+    <color name="colorSecondaryDark">#0d9488</color>
+    
+    <!-- Background colors - Dark mode -->
+    <color name="colorBackground">#0f0f1a</color>
+    <color name="colorBackgroundSecondary">#1a1a2e</color>
+    <color name="colorBackgroundTertiary">#252542</color>
+    <color name="colorBackgroundCard">#16213e</color>
+    
+    <!-- Text colors -->
+    <color name="colorForeground">#f8fafc</color>
+    <color name="colorTextSecondary">#94a3b8</color>
+    <color name="colorGrayText">#64748b</color>
+    
+    <!-- Accent colors -->
+    <color name="colorAccent">#8B98CE</color>
+    <color name="shadowColor">#27000000</color>
+    
+    <!-- Button colors -->
+    <color name="colorButtonBackground">#6366f1</color>
+    <color name="colorButtonForeground">#ffffff</color>
+    
+    <!-- Status colors -->
+    <color name="colorSuccess">#22c55e</color>
+    <color name="colorWarning">#f59e0b</color>
+    <color name="colorError">#ef4444</color>
+    <color name="colorInfo">#3b82f6</color>
+    
+    <!-- Panel colors -->
+    <color name="colorPanelBackground">#383c4f</color>
+    <color name="colorPanelText">#aab5df</color>
+</resources>
