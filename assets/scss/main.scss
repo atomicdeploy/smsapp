@@ -212,6 +212,74 @@ body {
 }
 
 // ============================================
+// IONIC OVERRIDES FOR DARK MODE
+// ============================================
+
+ion-content {
+  --background: var(--color-bg-primary);
+}
+
+ion-header {
+  ion-toolbar {
+    --background: var(--color-bg-secondary);
+    --color: var(--color-text-primary);
+    --border-color: transparent;
+  }
+}
+
+ion-card {
+  --background: var(--color-bg-card);
+  --color: var(--color-text-primary);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg, $shadow-glow;
+  }
+}
+
+ion-button {
+  --border-radius: #{$radius-md};
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  &.button-primary {
+    --background: linear-gradient(135deg, #{$color-primary} 0%, #{$color-secondary} 100%);
+    --box-shadow: #{$shadow-md};
+  }
+}
+
+ion-input, ion-textarea {
+  --background: var(--color-bg-tertiary);
+  --color: var(--color-text-primary);
+  --placeholder-color: var(--color-text-muted);
+  --border-radius: #{$radius-md};
+  --padding-start: #{$spacing-md};
+  --padding-end: #{$spacing-md};
+}
+
+ion-item {
+  --background: transparent;
+  --color: var(--color-text-primary);
+  --border-color: rgba(148, 163, 184, 0.1);
+}
+
+ion-list {
+  --background: transparent;
+}
+
+ion-toggle {
+  --background: var(--color-bg-tertiary);
+  --background-checked: var(--color-primary);
+  --handle-background: var(--color-text-primary);
+  --handle-background-checked: var(--color-text-primary);
+}
+
+// ============================================
 // HEADER STYLES
 // ============================================
 
@@ -626,6 +694,10 @@ body {
 
 .slide-up {
   animation: slide-up $transition-slow ease-out;
+}
+
+.pulse-animation {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 // ============================================

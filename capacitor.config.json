@@ -1,6 +1,6 @@
 {
   "appId": "ir.smsapp.securitysystem",
-  "appName": "SMS App",
+  "appName": "سامانه ضد سرقت",
   "webDir": "dist",
   "server": {
     "androidScheme": "https"
@@ -24,6 +24,13 @@
       "resize": "body",
       "style": "DARK",
       "resizeOnFullScreen": true
+    },
+    "App": {
+      "androidExitOnBackNavigation": false
     }
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#0f0f1a"
   }
 }

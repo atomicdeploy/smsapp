@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Security System</string>
+    <string name="title_activity_main">Security System</string>
+    <string name="package_name">ir.smsapp.securitysystem</string>
+    <string name="custom_url_scheme">ir.smsapp.securitysystem</string>
+    
+    <!-- Common strings -->
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- App strings -->
+    <string name="str_welcome">Welcome</string>
+    <string name="str_title_exit_app">Exit app</string>
+    <string name="str_question_exit_app">Would you like to exit the app?</string>
+</resources>

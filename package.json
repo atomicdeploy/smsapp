@@ -29,6 +29,7 @@
     "@capacitor/keyboard": "^6.0.3",
     "@capacitor/splash-screen": "^6.0.2",
     "@capacitor/status-bar": "^6.0.2",
+    "@ionic/vue": "^8.7.11",
     "@nuxt/ui": "^2.21.0",
     "@nuxtjs/i18n": "^10.2.1",
     "@pinia/nuxt": "^0.5.5",
